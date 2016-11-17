@@ -1,0 +1,18 @@
+<table class="table table-striped table-hover">
+	<thead>
+		<tr>
+			<th class="text-center" width="30">ID</th>
+			<th class="text-left">Nombre</th>
+			<td class="text-center" width="50">Porcentaje</td>
+			<td ng-if="user.tipo != 'comprador'" class="text-center" width="50">Borrar</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="p in productos">
+			<td class="text-center" width="30">{{p.id}}</td>
+			<td class="text-left">{{p.nombre}}</td>
+			<td class="text-center" width="50">{{p.porcentaje}}</td>
+			<td ng-if="user.tipo != 'comprador'" class="text-center" width="50"><a ng-click="borrar(p.id)" ng-href=""><i class="glyphicon glyphicon-remove"></i></a></td>
+		</tr>
+	</tbody>
+</table>
